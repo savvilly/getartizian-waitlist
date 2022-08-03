@@ -13,7 +13,7 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
 </head>
 
-<body>
+<body id="app">
     <div class="img">
         <img src="./images/logo.png" alt="">
     </div>
@@ -23,14 +23,16 @@
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi, explicabo culpa magnam veritatis saepe
                 officia distinctio sint, quibusdam nulla libero ullam.</p>
             <div>
-                <input type="text" placeholder="Enter your email address" class="form-text">
-                <input type="button" value="Submit" class="btn">
+                <input v-model="email" type="email" value=" " placeholder="Enter your email address" class="form-text">
+                <input type="button" :value="loading === true ? 'Loading...' : 'Submit'" class="btn" @click="joinWaitlist">
             </div>
         </div>
         <div class="side">
             <img src="./images/waiting.jpg" alt="">
         </div>
     </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./main.js"></script>
 </body>
 
 </html>
